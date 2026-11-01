@@ -57,6 +57,17 @@
     "intensity-changed": "{prefix}&aSchnee-Intensität auf Stufe {level} gesetzt!",
     "invalid-level": "{prefix}&cDie Schneestufe muss zwischen 0 und 5 liegen!"
   },
+  "gui": {
+    "name-claimed": "&e&lTag {day}",
+    "name-available": "&a&lTag {day}",
+    "name-locked": "&c&lTag {day}",
+    "status-claimed": "&7Status: &eAbgeholt",
+    "status-available": "&7Status: &aVerfügbar",
+    "status-locked": "&7Status: &cGesperrt",
+    "hint-claimed": "&7Du hast diesen Tag schon abgeholt!",
+    "hint-available": "&aKlicke, um deine Geschenke abzuholen!",
+    "hint-locked": "&cKomm am {day}. Dezember wieder!"
+  },
   "usage": {
     "advent-calendar": "&cVerwendung: /adventcalendar [reset <Spieler> <Tag|all> | test]",
     "santa": "&cVerwendung: /christmas santa <start [Zeit] [Welt] [x] [y] [z] | start [Zeit] random | stop | teleport>",

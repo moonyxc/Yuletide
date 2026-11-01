@@ -57,6 +57,17 @@
     "intensity-changed": "{prefix}&aSnow intensity set to level {level}!",
     "invalid-level": "{prefix}&cSnow level must be between 0 and 5!"
   },
+  "gui": {
+    "name-claimed": "&e&lDay {day}",
+    "name-available": "&a&lDay {day}",
+    "name-locked": "&c&lDay {day}",
+    "status-claimed": "&7Status: &eClaimed",
+    "status-available": "&7Status: &aAvailable",
+    "status-locked": "&7Status: &cLocked",
+    "hint-claimed": "&7You already claimed this day!",
+    "hint-available": "&aClick to claim your gifts!",
+    "hint-locked": "&cCome back on December {day}!"
+  },
   "usage": {
     "advent-calendar": "&cUsage: /adventcalendar [reset <player> <day|all> | test]",
     "santa": "&cUsage: /christmas santa <start [time] [world] [x] [y] [z] | start [time] random | stop | teleport>",
