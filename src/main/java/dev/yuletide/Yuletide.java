@@ -3,6 +3,11 @@ package dev.yuletide;
 import dev.yuletide.calendar.CalendarManager;
 import dev.yuletide.command.AdventCalendarCommand;
 import dev.yuletide.command.ChristmasCommand;
+import dev.yuletide.command.CrackerCommand;
+import dev.yuletide.command.YuletideCommand;
+import dev.yuletide.cracker.CrackerManager;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import dev.yuletide.santa.SantaManager;
 import dev.yuletide.snow.SnowEffectManager;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
@@ -29,17 +34,23 @@ public class Yuletide implements ModInitializer {
 
 	public static final SantaManager SANTA = new SantaManager();
 	public static final SnowEffectManager SNOW = new SnowEffectManager();
+	public static final CrackerManager CRACKERS = new CrackerManager();
 
 	@Override
 	public void onInitialize() {
 		CONFIG.load();
 		SNOW.reload();
+		CRACKERS.reload();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			new AdventCalendarCommand().register(dispatcher, "adventcalendar", "ac", "calendar", "advent");
 			new ChristmasCommand().register(dispatcher, "christmas", "xmas");
+			new CrackerCommand().register(dispatcher, "cracker", "crackers");
+			new YuletideCommand().register(dispatcher, "yuletide");
 		});
 
+		UseItemCallback.EVENT.register((player, level, hand) -> CRACKERS.use(player, level, hand));
+		UseBlockCallback.EVENT.register((player, level, hand, hit) -> CRACKERS.use(player, level, hand));
 		ServerTickEvents.END_SERVER_TICK.register(SANTA::tick);
 		ServerTickEvents.END_SERVER_TICK.register(SNOW::tick);
 		ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> SANTA.onEntityLoad(entity));
@@ -60,6 +71,7 @@ public class Yuletide implements ModInitializer {
 	public static void reload(MinecraftServer server) {
 		CONFIG.load();
 		SNOW.reload();
+		CRACKERS.reload();
 		GIFTS.load(server, CONFIG.gifts(), CONFIG.config());
 		CALENDAR.reload();
 	}
