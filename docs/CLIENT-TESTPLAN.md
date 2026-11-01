@@ -131,9 +131,9 @@ Als Op ausführen, am besten auf ebenem Boden.
 | Befehl | Erwartung | ✔ |
 |---|---|---|
 | `/adventcalendar`, `/cracker list`, `/christmas snow` | Funktionieren | ☐ |
-| `/adventcalendar reset|test` | Abgelehnt | ☐ |
+| `/adventcalendar reset` / `test` | Abgelehnt | ☐ |
 | `/christmas santa …`, `/christmas reload` | Abgelehnt | ☐ |
-| `/cracker give|get` | Abgelehnt | ☐ |
+| `/cracker give` / `get` | Abgelehnt | ☐ |
 | Tab-Vervollständigung | Zeigt nur erlaubte Unterbefehle | ☐ |
 
 ---
