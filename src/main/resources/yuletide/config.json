@@ -1,0 +1,90 @@
+{
+  "general": {
+    "language": "en"
+  },
+  "advent-calendar": {
+    "enabled": true,
+    "allow-previous-days": true,
+    "timezone": "",
+    "gui": {
+      "title": "&c&lAdvent Calendar",
+      "size": 54,
+      "fill-empty-slots": true,
+      "fill-material": "minecraft:red_stained_glass_pane",
+      "day-item": {
+        "available": "minecraft:green_wool",
+        "claimed": "minecraft:yellow_wool",
+        "locked": "minecraft:red_wool"
+      }
+    }
+  },
+  "santa-claus": {
+    "enabled": true,
+    "default-duration": 600,
+    "entity-type": "minecraft:villager",
+    "name": "&c&lSanta Claus &f&l🎅",
+    "show-name-tag": true,
+    "gift-drop": {
+      "enabled": true,
+      "chance": 15.0,
+      "interval": 5
+    },
+    "snow-trail": {
+      "enabled": true,
+      "fade-delay": 100,
+      "particle-amount": 10
+    },
+    "spawn-locations": [
+      { "world": "minecraft:overworld", "x": 0, "y": 64, "z": 0 },
+      { "world": "minecraft:overworld", "x": 100, "y": 64, "z": 100 }
+    ]
+  },
+  "crackers": {
+    "enabled": true,
+    "types": {
+      "basic": {
+        "name": "&e&lBasic Cracker",
+        "material": "minecraft:paper",
+        "custom-model-data": 0,
+        "lore": ["&7Right-click to open!", "&7You will receive all items inside!"],
+        "glow": true,
+        "rewards": [
+          { "type": "ITEM", "item": "minecraft:diamond", "amount": 1 },
+          { "type": "ITEM", "item": "minecraft:emerald", "amount": 3 },
+          { "type": "COMMAND", "command": "give {player} golden_apple 2" }
+        ]
+      },
+      "premium": {
+        "name": "&6&lPremium Cracker",
+        "material": "minecraft:paper",
+        "custom-model-data": 1,
+        "lore": ["&7Right-click to open!", "&6Premium rewards inside!", "&7You will receive all items!"],
+        "glow": true,
+        "rewards": [
+          { "type": "ITEM", "item": "minecraft:diamond", "amount": 5 },
+          { "type": "ITEM", "item": "minecraft:netherite_scrap", "amount": 2 },
+          { "type": "ITEM", "item": "minecraft:enchanted_golden_apple", "amount": 1 },
+          { "type": "COMMAND", "command": "give {player} netherite_ingot 1" }
+        ]
+      }
+    }
+  },
+  "snow-effect": {
+    "enabled": true,
+    "default-intensity": 3,
+    "levels": {
+      "1": { "particles-per-tick": 1, "radius": 10 },
+      "2": { "particles-per-tick": 3, "radius": 15 },
+      "3": { "particles-per-tick": 5, "radius": 20 },
+      "4": { "particles-per-tick": 8, "radius": 25 },
+      "5": { "particles-per-tick": 12, "radius": 30 }
+    },
+    "disabled-worlds": ["minecraft:the_nether", "minecraft:the_end"]
+  },
+  "gift-groups": {
+    "default": { "priority": 0 },
+    "vip": { "priority": 1, "tag": "christmas_vip" },
+    "premium": { "priority": 2, "tag": "christmas_premium" },
+    "donor": { "priority": 3, "tag": "christmas_donor" }
+  }
+}

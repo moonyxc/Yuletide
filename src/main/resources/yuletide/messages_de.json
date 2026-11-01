@@ -1,0 +1,66 @@
+{
+  "prefix": "&c&l[Weihnachten] &r",
+  "general": {
+    "no-permission": "{prefix}&cDazu hast du keine Berechtigung!",
+    "player-not-found": "{prefix}&cSpieler '{player}' nicht gefunden!",
+    "invalid-number": "{prefix}&cUngültige Zahl: {input}",
+    "config-reloaded": "{prefix}&aKonfiguration erfolgreich neu geladen!",
+    "players-only": "{prefix}&cDieser Befehl kann nur von Spielern benutzt werden!",
+    "day-out-of-range": "{prefix}&cDer Tag muss zwischen 1 und 25 liegen!"
+  },
+  "advent-calendar": {
+    "gui-opened": "{prefix}&aAdventskalender geöffnet!",
+    "already-claimed": "{prefix}&cDu hast das Geschenk dieses Tages schon abgeholt!",
+    "not-available-yet": "{prefix}&cDieses Türchen ist noch nicht offen! Komm am {day}. Dezember wieder!",
+    "previous-days-disabled": "{prefix}&cDu kannst nur das heutige Geschenk abholen!",
+    "claimed-success": "{prefix}&aDu hast dein Geschenk für Tag {day} abgeholt!",
+    "no-gifts": "{prefix}&cFür Tag {day} sind keine Geschenke konfiguriert. Bitte sag einem Admin Bescheid!",
+    "reset-success": "{prefix}&aTag {day} für {player} zurückgesetzt!",
+    "reset-all-success": "{prefix}&aAlle Tage für {player} zurückgesetzt!",
+    "test-mode-enabled": "{prefix}&aTestmodus aktiviert! Du kannst jetzt alle Geschenke abholen.",
+    "test-mode-disabled": "{prefix}&cTestmodus deaktiviert!",
+    "not-in-calendar-period": "{prefix}&cDer Adventskalender ist nur im Dezember verfügbar!",
+    "disabled": "{prefix}&cDer Adventskalender ist deaktiviert!"
+  },
+  "santa": {
+    "event-started": "{prefix}&aDer Weihnachtsmann ist bei &e{world} ({x}, {y}, {z})&a angekommen!",
+    "event-started-random": "{prefix}&aDer Weihnachtsmann ist irgendwo in der Welt angekommen!",
+    "event-stopped": "{prefix}&cDer Weihnachtsmann ist weitergezogen! Bis zum nächsten Mal!",
+    "event-already-running": "{prefix}&cDas Weihnachtsmann-Event läuft bereits!",
+    "event-not-running": "{prefix}&cDas Weihnachtsmann-Event läuft nicht!",
+    "teleported-to-santa": "{prefix}&aDu wurdest zum Weihnachtsmann teleportiert!",
+    "invalid-duration": "{prefix}&cUngültiges Zeitformat! Nutze z. B.: 5m, 10s, 1h",
+    "invalid-world": "{prefix}&cWelt '{world}' nicht gefunden!",
+    "invalid-coordinates": "{prefix}&cUngültige Koordinaten: {input}",
+    "gift-dropped": "{prefix}&aDer Weihnachtsmann hat ein Geschenk fallen lassen!",
+    "no-spawn-locations": "{prefix}&cKeine gültigen Spawn-Positionen für den Zufallsstart konfiguriert!",
+    "console-needs-coordinates": "{prefix}&cAus der Konsole müssen Koordinaten angegeben werden!",
+    "spawn-failed": "{prefix}&cDer Weihnachtsmann konnte nicht gespawnt werden!"
+  },
+  "crackers": {
+    "opened": "{prefix}&aDu hast ein {cracker}&a geöffnet!",
+    "received-item": "{prefix}&aDu hast &e{item} x{amount}&a erhalten!",
+    "received-command-reward": "{prefix}&aDu hast eine besondere Belohnung erhalten!",
+    "given-to-player": "{prefix}&aDu hast {player} {amount}x {cracker} &agegeben!",
+    "received-from-player": "{prefix}&aDu hast {amount}x {cracker} &avon {player} erhalten!",
+    "cracker-not-found": "{prefix}&cCracker-Typ '{cracker}' nicht gefunden!",
+    "invalid-amount": "{prefix}&cDie Anzahl muss zwischen 1 und 64 liegen!",
+    "no-permission-multiple": "{prefix}&cDu kannst nur 1 Cracker auf einmal bekommen!",
+    "inventory-full": "{prefix}&cDein Inventar ist voll!",
+    "list-header": "{prefix}&aVerfügbare Cracker:",
+    "list-entry": "&7- &e{cracker}"
+  },
+  "snow": {
+    "enabled": "{prefix}&aSchneeeffekt aktiviert!",
+    "disabled": "{prefix}&cSchneeeffekt deaktiviert!",
+    "not-enabled-globally": "{prefix}&cDer Schneeeffekt ist global nicht aktiviert!",
+    "intensity-changed": "{prefix}&aSchnee-Intensität auf Stufe {level} gesetzt!",
+    "invalid-level": "{prefix}&cDie Schneestufe muss zwischen 0 und 5 liegen!"
+  },
+  "usage": {
+    "advent-calendar": "&cVerwendung: /adventcalendar [reset <Spieler> <Tag|all> | test]",
+    "santa": "&cVerwendung: /christmas santa <start [Zeit] [Welt] [x] [y] [z] | start [Zeit] random | stop | teleport>",
+    "christmas": "&cVerwendung: /christmas <snow [0-5] | santa | reload>",
+    "cracker": "&cVerwendung: /cracker <list | give <Spieler> <Cracker> [Anzahl] | get <Cracker> [Anzahl]>"
+  }
+}

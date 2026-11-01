@@ -1,0 +1,94 @@
+{
+  "day-1": { "groups": {
+    "default": { "items": [
+      { "type": "ITEM", "item": "diamond", "amount": 1, "name": "&b&lDay 1 Diamond", "lore": ["&7A special gift for day 1!"] }
+    ] },
+    "vip": { "items": [
+      { "type": "ITEM", "item": "diamond", "amount": 3, "name": "&b&lDay 1 VIP Diamond", "lore": ["&7A special VIP gift!"] },
+      { "type": "COMMAND", "command": "give {player} emerald 5" }
+    ] }
+  } },
+  "day-2": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "golden_apple", "amount": 2 }
+  ] } } },
+  "day-3": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "enchanted_golden_apple", "amount": 1 }
+  ] } } },
+  "day-4": { "groups": { "default": { "items": [
+    { "type": "COMMAND", "command": "give {player} netherite_scrap 1" }
+  ] } } },
+  "day-5": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "diamond_sword", "amount": 1, "enchantments": ["sharpness:3", "unbreaking:2"] }
+  ] } } },
+  "day-6": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "emerald", "amount": 10 }
+  ] } } },
+  "day-7": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "enchanted_book", "amount": 1, "stored-enchantments": ["mending:1"] }
+  ] } } },
+  "day-8": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "totem_of_undying", "amount": 1 }
+  ] } } },
+  "day-9": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "elytra", "amount": 1 }
+  ] } } },
+  "day-10": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "diamond_block", "amount": 5 }
+  ] } } },
+  "day-11": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "netherite_ingot", "amount": 1 }
+  ] } } },
+  "day-12": { "groups": { "default": { "items": [
+    { "type": "COMMAND", "command": "give {player} diamond 10" }
+  ] } } },
+  "day-13": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "enchanted_book", "amount": 1, "stored-enchantments": ["fortune:3"] }
+  ] } } },
+  "day-14": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "diamond_pickaxe", "amount": 1, "enchantments": ["efficiency:5", "unbreaking:3"] }
+  ] } } },
+  "day-15": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "beacon", "amount": 1 }
+  ] } } },
+  "day-16": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "nether_star", "amount": 3 }
+  ] } } },
+  "day-17": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "enchanted_golden_apple", "amount": 5 }
+  ] } } },
+  "day-18": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "diamond_chestplate", "amount": 1, "enchantments": ["protection:4", "unbreaking:3"] }
+  ] } } },
+  "day-19": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "trident", "amount": 1, "enchantments": ["loyalty:3"] }
+  ] } } },
+  "day-20": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "shulker_box", "amount": 1 }
+  ] } } },
+  "day-21": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "netherite_ingot", "amount": 3 }
+  ] } } },
+  "day-22": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "enchanted_book", "amount": 1, "stored-enchantments": ["sharpness:5"] }
+  ] } } },
+  "day-23": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "dragon_head", "amount": 1 }
+  ] } } },
+  "day-24": { "groups": { "default": { "items": [
+    { "type": "ITEM", "item": "netherite_sword", "amount": 1, "enchantments": ["sharpness:5", "looting:3", "unbreaking:3"] },
+    { "type": "COMMAND", "command": "give {player} emerald_block 10" }
+  ] } } },
+  "day-25": { "groups": {
+    "default": { "items": [
+      { "type": "ITEM", "item": "netherite_chestplate", "amount": 1, "enchantments": ["protection:4", "unbreaking:3", "mending:1"] },
+      { "type": "ITEM", "item": "netherite_helmet", "amount": 1, "enchantments": ["protection:4", "unbreaking:3"] },
+      { "type": "ITEM", "item": "netherite_leggings", "amount": 1, "enchantments": ["protection:4", "unbreaking:3"] },
+      { "type": "ITEM", "item": "netherite_boots", "amount": 1, "enchantments": ["protection:4", "unbreaking:3"] },
+      { "type": "COMMAND", "command": "give {player} diamond_block 32" }
+    ] },
+    "vip": { "items": [
+      { "type": "ITEM", "item": "netherite_chestplate", "amount": 1, "enchantments": ["protection:4", "unbreaking:3", "mending:1", "thorns:3"] },
+      { "type": "PERMISSION", "permission": "christmasplus.christmas.vip" }
+    ] }
+  } }
+}

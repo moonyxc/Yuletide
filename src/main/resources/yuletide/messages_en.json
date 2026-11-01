@@ -1,0 +1,66 @@
+{
+  "prefix": "&c&l[Christmas] &r",
+  "general": {
+    "no-permission": "{prefix}&cYou don't have permission to do that!",
+    "player-not-found": "{prefix}&cPlayer '{player}' not found!",
+    "invalid-number": "{prefix}&cInvalid number: {input}",
+    "config-reloaded": "{prefix}&aConfiguration reloaded successfully!",
+    "players-only": "{prefix}&cThis command can only be used by players!",
+    "day-out-of-range": "{prefix}&cDay must be between 1 and 25!"
+  },
+  "advent-calendar": {
+    "gui-opened": "{prefix}&aOpened the advent calendar!",
+    "already-claimed": "{prefix}&cYou have already claimed this day's gift!",
+    "not-available-yet": "{prefix}&cThis day is not available yet! Come back on day {day}!",
+    "previous-days-disabled": "{prefix}&cYou can only claim today's gift!",
+    "claimed-success": "{prefix}&aYou have claimed your gift for day {day}!",
+    "no-gifts": "{prefix}&cNo gifts are configured for day {day}. Please tell an administrator!",
+    "reset-success": "{prefix}&aReset day {day} for player {player}!",
+    "reset-all-success": "{prefix}&aReset all days for player {player}!",
+    "test-mode-enabled": "{prefix}&aTest mode enabled! You can now claim all gifts.",
+    "test-mode-disabled": "{prefix}&cTest mode disabled!",
+    "not-in-calendar-period": "{prefix}&cThe advent calendar is only available in December!",
+    "disabled": "{prefix}&cThe advent calendar is disabled!"
+  },
+  "santa": {
+    "event-started": "{prefix}&aSanta Claus has arrived at &e{world} ({x}, {y}, {z})&a!",
+    "event-started-random": "{prefix}&aSanta Claus has arrived somewhere in the world!",
+    "event-stopped": "{prefix}&cSanta Claus has left! See you next time!",
+    "event-already-running": "{prefix}&cSanta Claus event is already running!",
+    "event-not-running": "{prefix}&cSanta Claus event is not running!",
+    "teleported-to-santa": "{prefix}&aYou have been teleported to Santa Claus!",
+    "invalid-duration": "{prefix}&cInvalid duration format! Use format like: 5m, 10s, 1h",
+    "invalid-world": "{prefix}&cWorld '{world}' not found!",
+    "invalid-coordinates": "{prefix}&cInvalid coordinates: {input}",
+    "gift-dropped": "{prefix}&aSanta Claus dropped a gift!",
+    "no-spawn-locations": "{prefix}&cNo valid spawn locations configured for random spawn!",
+    "console-needs-coordinates": "{prefix}&cYou must specify coordinates when using this from the console!",
+    "spawn-failed": "{prefix}&cSanta Claus could not be spawned!"
+  },
+  "crackers": {
+    "opened": "{prefix}&aYou opened a {cracker}&a!",
+    "received-item": "{prefix}&aYou received &e{item} x{amount}&a!",
+    "received-command-reward": "{prefix}&aYou received a special reward!",
+    "given-to-player": "{prefix}&aYou gave {amount}x {cracker} &ato {player}!",
+    "received-from-player": "{prefix}&aYou received {amount}x {cracker} &afrom {player}!",
+    "cracker-not-found": "{prefix}&cCracker type '{cracker}' not found!",
+    "invalid-amount": "{prefix}&cAmount must be between 1 and 64!",
+    "no-permission-multiple": "{prefix}&cYou can only get 1 cracker at a time!",
+    "inventory-full": "{prefix}&cYour inventory is full!",
+    "list-header": "{prefix}&aAvailable crackers:",
+    "list-entry": "&7- &e{cracker}"
+  },
+  "snow": {
+    "enabled": "{prefix}&aSnow effect enabled!",
+    "disabled": "{prefix}&cSnow effect disabled!",
+    "not-enabled-globally": "{prefix}&cSnow effect is not enabled globally!",
+    "intensity-changed": "{prefix}&aSnow intensity set to level {level}!",
+    "invalid-level": "{prefix}&cSnow level must be between 0 and 5!"
+  },
+  "usage": {
+    "advent-calendar": "&cUsage: /adventcalendar [reset <player> <day|all> | test]",
+    "santa": "&cUsage: /christmas santa <start [time] [world] [x] [y] [z] | start [time] random | stop | teleport>",
+    "christmas": "&cUsage: /christmas <snow [0-5] | santa | reload>",
+    "cracker": "&cUsage: /cracker <list | give <player> <cracker> [amount] | get <cracker> [amount]>"
+  }
+}
