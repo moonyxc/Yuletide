@@ -4,6 +4,7 @@ import dev.yuletide.calendar.CalendarManager;
 import dev.yuletide.command.AdventCalendarCommand;
 import dev.yuletide.command.ChristmasCommand;
 import dev.yuletide.santa.SantaManager;
+import dev.yuletide.snow.SnowEffectManager;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -27,10 +28,12 @@ public class Yuletide implements ModInitializer {
 	public static final CalendarManager CALENDAR = new CalendarManager(CONFIG, MESSAGES, GIFTS);
 
 	public static final SantaManager SANTA = new SantaManager();
+	public static final SnowEffectManager SNOW = new SnowEffectManager();
 
 	@Override
 	public void onInitialize() {
 		CONFIG.load();
+		SNOW.reload();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			new AdventCalendarCommand().register(dispatcher, "adventcalendar", "ac", "calendar", "advent");
@@ -38,6 +41,7 @@ public class Yuletide implements ModInitializer {
 		});
 
 		ServerTickEvents.END_SERVER_TICK.register(SANTA::tick);
+		ServerTickEvents.END_SERVER_TICK.register(SNOW::tick);
 		ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> SANTA.onEntityLoad(entity));
 		ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) -> SANTA.allowDamage(entity));
 
@@ -55,6 +59,7 @@ public class Yuletide implements ModInitializer {
 	/** Lädt Konfiguration, Geschenke und Kalenderdaten neu (Santa-Event bleibt unberührt). */
 	public static void reload(MinecraftServer server) {
 		CONFIG.load();
+		SNOW.reload();
 		GIFTS.load(server, CONFIG.gifts(), CONFIG.config());
 		CALENDAR.reload();
 	}

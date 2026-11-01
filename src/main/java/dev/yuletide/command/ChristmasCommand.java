@@ -2,6 +2,7 @@ package dev.yuletide.command;
 
 import dev.yuletide.Yuletide;
 import dev.yuletide.santa.SantaManager;
+import dev.yuletide.snow.SnowEffectManager;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.commands.CommandSourceStack;
@@ -18,6 +19,7 @@ public final class ChristmasCommand extends CommandBase {
 		}
 		switch (args[0].toLowerCase()) {
 			case "santa" -> santa(source, args);
+			case "snow" -> snow(source, args);
 			case "reload" -> {
 				if (!isOp(source)) {
 					reply(source, "general.no-permission");
@@ -29,6 +31,38 @@ public final class ChristmasCommand extends CommandBase {
 			default -> reply(source, "usage.christmas");
 		}
 		return OK;
+	}
+
+	private void snow(CommandSourceStack source, String[] args) {
+		ServerPlayer player = source.getPlayer();
+		if (player == null) {
+			reply(source, "general.players-only");
+			return;
+		}
+		SnowEffectManager snow = Yuletide.SNOW;
+		if (!snow.isEnabled()) {
+			reply(source, "snow.not-enabled-globally");
+			return;
+		}
+		if (args.length < 2) {
+			reply(source, snow.toggle(player.getUUID()) ? "snow.enabled" : "snow.disabled");
+			return;
+		}
+		int level;
+		try {
+			level = Integer.parseInt(args[1]);
+		} catch (NumberFormatException e) {
+			level = -1;
+		}
+		if (level < 0 || level > SnowEffectManager.MAX_LEVEL) {
+			reply(source, "snow.invalid-level");
+		} else if (level == 0) {
+			snow.setLevel(player.getUUID(), 0);
+			reply(source, "snow.disabled");
+		} else {
+			snow.setLevel(player.getUUID(), level);
+			reply(source, "snow.intensity-changed", "level", String.valueOf(level));
+		}
 	}
 
 	private void santa(CommandSourceStack source, String[] args) {
@@ -118,6 +152,8 @@ public final class ChristmasCommand extends CommandBase {
 				out.add("santa");
 				out.add("reload");
 			}
+		} else if (args.length == 2 && args[0].equalsIgnoreCase("snow")) {
+			out.addAll(List.of("0", "1", "2", "3", "4", "5"));
 		} else if (op && args[0].equalsIgnoreCase("santa")) {
 			if (args.length == 2) {
 				out.addAll(List.of("start", "stop", "teleport"));
