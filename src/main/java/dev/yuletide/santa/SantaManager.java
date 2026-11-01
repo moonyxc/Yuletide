@@ -53,6 +53,8 @@ public final class SantaManager {
 
 	private @Nullable MinecraftServer server;
 	private @Nullable UUID santa;
+	private @Nullable Entity santaRef;
+	private int goneTicks;
 	private @Nullable ResourceKey<Level> santaLevel;
 	private @Nullable BlockPos forcedChunk;
 	private int ticksLeft;
@@ -72,11 +74,14 @@ public final class SantaManager {
 		}
 		tick++;
 		Entity entity = santaEntity();
-		if (entity == null || entity.isRemoved() || !entity.isAlive()) {
-			Yuletide.LOGGER.info("Santa entity is gone - ending the event");
-			stop(true);
+		if (entity == null || !entity.isAlive()) {
+			if (++goneTicks > 100) {
+				Yuletide.LOGGER.info("Santa entity is gone - ending the event");
+				stop(true);
+			}
 			return;
 		}
+		goneTicks = 0;
 		ServerLevel level = (ServerLevel) entity.level();
 		Cfg cfg = Yuletide.CONFIG.config();
 		removeExpiredTrail(false);
@@ -132,11 +137,18 @@ public final class SantaManager {
 	}
 
 	private @Nullable Entity santaEntity() {
+		if (santaRef != null && !santaRef.isRemoved()) {
+			return santaRef;
+		}
 		if (server == null || santa == null || santaLevel == null) {
 			return null;
 		}
 		ServerLevel level = server.getLevel(santaLevel);
-		return level == null ? null : level.getEntity(santa);
+		Entity found = level == null ? null : level.getEntity(santa);
+		if (found != null) {
+			santaRef = found;
+		}
+		return found;
 	}
 
 	public @Nullable Vec3 position() {
@@ -185,18 +197,23 @@ public final class SantaManager {
 		if (entity instanceof Mob mob) {
 			mob.setPersistenceRequired();
 		}
-		if (!level.addFreshEntity(entity)) {
-			return false;
-		}
+		BlockPos block = BlockPos.containing(pos);
+		level.setChunkForced(block.getX() >> 4, block.getZ() >> 4, true);
+		level.getChunk(block.getX() >> 4, block.getZ() >> 4);
 		server = level.getServer();
 		santa = entity.getUUID();
 		santaLevel = level.dimension();
+		if (!level.addFreshEntity(entity)) {
+			santa = null;
+			santaLevel = null;
+			level.setChunkForced(block.getX() >> 4, block.getZ() >> 4, false);
+			return false;
+		}
 		ticksLeft = Math.max(1, seconds) * 20;
+		santaRef = entity;
+		goneTicks = 0;
 		tick = 0;
-		BlockPos block = BlockPos.containing(pos);
 		forcedChunk = block;
-		level.setChunkForced(block.getX() >> 4, block.getZ() >> 4, true);
-
 		String id = level.dimension().identifier().toString();
 		broadcast(Yuletide.MESSAGES.get("santa.event-started", "world", id,
 			"x", String.valueOf(block.getX()), "y", String.valueOf(block.getY()),
@@ -260,6 +277,7 @@ public final class SantaManager {
 			entity.discard();
 		}
 		santa = null;
+		santaRef = null;
 		santaLevel = null;
 		forcedChunk = null;
 		if (announce) {
