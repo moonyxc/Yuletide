@@ -97,6 +97,10 @@ public final class Cfg {
 		return out;
 	}
 
+	public Set<String> keys() {
+		return new LinkedHashSet<>(root.keySet());
+	}
+
 	public Set<String> keys(String path) {
 		Cfg section = section(path);
 		return section == null ? new LinkedHashSet<>() : new LinkedHashSet<>(section.root.keySet());
