@@ -69,6 +69,7 @@
     "hint-locked": "&cKomm am {day}. Dezember wieder!"
   },
   "usage": {
+    "yuletide": "&cVerwendung: /yuletide <calendar | snow | santa | cracker | reload>",
     "advent-calendar": "&cVerwendung: /adventcalendar [reset <Spieler> <Tag|all> | test]",
     "santa": "&cVerwendung: /christmas santa <start [Zeit] [Welt] [x] [y] [z] | start [Zeit] random | stop | teleport>",
     "christmas": "&cVerwendung: /christmas <snow [0-5] | santa | reload>",
