@@ -1,6 +1,6 @@
 # 🎄 Yuletide
 
-Serverseitige Fabric-Mod für **Minecraft 26.1.2** (Java 25) – Adventskalender, Weihnachtsmann-Event, Knallbonbons und Schneeeffekt nach `docs/PLAN.md` (Teil A). Spieler brauchen keine Mod auf dem Client.
+Fabric-Mod für **Minecraft 26.1.2** (Java 25) – Adventskalender, Weihnachtsmann-Event, Knallbonbons und Schneeeffekt nach `docs/PLAN.md` (Teil A). Läuft im **Einzelspieler** (Mod + Fabric API in den Client-`mods`-Ordner, Cheats in der Welt aktivieren für Op-Befehle) und auf **Servern** (Spieler brauchen dort keine Mod auf dem Client).
 
 ## Installation
 

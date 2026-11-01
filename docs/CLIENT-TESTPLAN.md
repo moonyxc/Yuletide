@@ -8,17 +8,18 @@ Schritt-für-Schritt-Anleitung, um die Mod mit einem echten Minecraft-Client zu 
 
 **Du brauchst:** Minecraft Java **26.1.2** mit Fabric Loader (≥ 0.20.1), Fabric API `0.155.3+26.1.2`, Java 25.
 
-### Variante A – Testserver lokal (empfohlen)
+### Variante A – Einzelspieler (einfachster Weg)
 1. `build.cmd` ausführen → `dist\yuletide-1.0.0.jar`.
-2. Fabric-Server 26.1.2 einrichten, `fabric-api` und `yuletide-1.0.0.jar` in `mods\` legen.
-3. `eula=true` setzen, in `server.properties`: `online-mode=false`, `pause-when-empty-seconds=-1`.
-4. Server starten, mit dem Client auf `localhost` verbinden.
-5. Dich selbst zum Op machen: in der Server-Konsole `op <DeinName>`.
+2. Fabric Loader für 26.1.2 installieren, `fabric-api` und `yuletide-1.0.0.jar` in den Client-`mods`-Ordner legen.
+3. Neue Welt mit **Cheats an** erstellen (oder „Für LAN öffnen“ mit Cheats), dann ist alles ein Op-Befehl nutzbar.
+
+### Variante B – Testserver lokal (für Mehrspieler-Tests)
+1. Fabric-Server 26.1.2 einrichten, `fabric-api` und `yuletide-1.0.0.jar` in `mods\` legen.
+2. `eula=true` setzen, in `server.properties`: `online-mode=false`, `pause-when-empty-seconds=-1`.
+3. Server starten, mit dem Client auf `localhost` verbinden.
+4. Dich selbst zum Op machen: in der Server-Konsole `op <DeinName>`.
 
 > Alternativ im Repo: `gradlew runServer` (Ordner `run\`, dort `eula.txt` und `server.properties` wie oben anlegen).
-
-### Variante B – Einzelspieler
-Die JAR zusätzlich im Client-`mods`-Ordner ablegen und eine Welt mit aktivierten Cheats erstellen. Die Mod ist serverseitig, läuft aber auch im integrierten Server.
 
 ### Start-Check
 - [ ] Server-Log enthält `Yuletide loaded` und `Loaded 34 calendar gifts`, keine Warnungen/Fehler.

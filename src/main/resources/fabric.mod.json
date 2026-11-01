@@ -6,7 +6,7 @@
 	"description": "Dein Server im Winterwunderland: Adventskalender, Weihnachtsmann-Event, Knallbonbons und Schnee.",
 	"authors": ["moonyxc"],
 	"license": "CC0-1.0",
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {
 		"main": ["dev.yuletide.Yuletide"]
 	},
